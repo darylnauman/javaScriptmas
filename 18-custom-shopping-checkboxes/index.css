@@ -1,0 +1,104 @@
+:root {
+    --wine-red: #c7375f;
+    --bright-red: #d42d2f;
+    --dark-green: #344d2f;
+    --light-green: #77a047;
+    --gold: #fac57d;
+    --snow: #f0f4f7;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    color: var(--snow);
+    background-color: var(--bright-red);
+    background-image: url(https://images.unsplash.com/photo-1482517967863-00e15c9b44be?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80);
+    background-size: cover;
+}
+
+.checklist {
+    position: relative;
+    background: var(--snow);
+    color: var(--dark-green);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-width: 200px;
+    min-height: 200px;
+    max-width: 5ch;
+    padding: 1em 2em;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+        rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+
+.checklist-item {
+    display: flex;
+    align-items: center;
+    margin: 0.5em;
+    width: 100%;
+    text-align: left;
+    font-weight: bold;
+}
+
+input[type="checkbox"] {
+    -webkit-appearance: none;
+    background-color: transparent;
+    margin-right: 10px;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 3px solid var(--dark-green);
+    border-radius: 30%;
+    transform: scale(1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input:hover[type="checkbox"] {
+    background-color: var(--wine-red);
+    transform: scale(1.2);
+    transition: transform 0.5s;
+}
+
+input:checked[type="checkbox"]::before {
+    content: "\002713";
+    font-size: 1.8rem;
+    color: var(--dark-green);
+}
+
+#Candles + label.strikethrough span::before {
+    content: "\1F56F";
+}
+
+#Decorations + label.strikethrough span::before {
+    content: "\1F384";
+}
+
+#Chocolate + label.strikethrough span::before {
+    content: "\1F36B";
+}
+
+input[type="checkbox"]:checked + label.strikethrough span {
+    text-decoration: line-through;
+    font-weight: normal;
+    opacity: 0.5;
+}
+
+/* Task:
+  - Write the CSS to create custom checkboxes for our shopping list.
+  
+  Stretch goals: 
+  - Add a different random check for each item.
+  - Use JavaScript to match the custom check to the item listed, e.g. socks would have socks as the checkmark. */
