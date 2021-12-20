@@ -20,10 +20,16 @@ const findYum = async () => {
     
     try {
         let response = await fetch(`https://foodish-api.herokuapp.com/api/images/dessert`);
-        let data = await response.json();
-        renderDessert(data);
+        
+        if (response.ok) {
+            let data = await response.json();
+            renderDessert(data);
+        } else {
+            throw new Error("Something went wrong!");
+        }
+
     } catch (err) {
-        console.log('Error: ', err);
+        console.log(err);
     }
 }
 
