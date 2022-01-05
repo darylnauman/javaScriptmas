@@ -1,0 +1,20 @@
+:root {
+    --wine-red: #c7375f;
+    --bright-red: #d42d2f;
+    --dark-green: #344d2f;
+    --light-green: #77a047;
+    --gold: #fac57d;
+    --snow: #f0f4f7;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--snow);
+    font-family: "Mountains of Christmas", cursive;
+    color: #d42d2f;
+}
